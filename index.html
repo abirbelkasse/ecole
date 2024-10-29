@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>accés aux objets d'un formulaire</h1>
+    <p>
+un formulaire est un document permettant de saisir des informations et d'effectuer des choix et de choisir des informations dans une liste de données. ces opérations son effectués en utilisants les objets de formulaires.les objets de formulaires sont:input,textare,select et button.   
+    </p>
+    <br><br>
+    <form action="">
+        <input type="text" class="txt" id="np" placeholder="votre nom et prenom">
+        <br><br>
+     <select name="" id="ville" class="txt">
+        <option>casablanca</option>
+        <option>fes</option>
+        <option>rabat</option>
+        <option>meknas</option>
+        <option>laayoone</option>
+        <option>tanger</option>
+        <option>marrakech</option>
+        <option>dakhla</option>
+        <option>agadir</option>
+        <option>ifrane</option>
+     </select>
+     <br><br>
+     <label>gender</label>
+     <input type="radio" name="gender" id="r1" value="Man">
+     <label for="r1">Man</label>
+     <input type="radio" name="gender" id="r2" value="Woman">
+     <label for="r2">Woman</label>
+     <br><br>
+
+     <label>loisirs</label>
+     <input type="checkbox" id="ch1" >
+     <label for="ch1">Sport</label>
+     <input type="checkbox" id="ch2" >
+     <label for="ch2">Music</label>
+     <input type="checkbox" id="ch3" >
+     <label for="ch3">Travel</label>
+     <br><br>
+     <input type="button" value="Afficher" class="btn" onclick="f1()">
+    </form>
+    <br><br>
+    <h3 id="f1"></h3>
+    <h3 id="f2"></h3>
+    <h3 id="f3"></h3>
+    <h3 id="f4"></h3>
+</div>
+    
+</body>
+</html>
+<script>
+    function f1(){
+    var np=document.getElementById('np').value
+    document.getElementById('f1').innerHTML="welcome :"+np
+    document.getElementById('f1').style.visibility="visible"
+
+    var ville=document.getElementById('ville').value
+    document.getElementById('f2').innerHTML="you are from :"+ville
+    document.getElementById('f2').style.visibility="visible"
+
+    var gender=document.forms[0].gender.value
+    document.getElementById('f3').innerHTML="you are :"+gender
+    document.getElementById('f3').style.visibility="visible"
+ 
+    var ch1=document.getElementById('ch1')
+    var ch2=document.getElementById('ch2')
+    var ch3=document.getElementById('ch3')
+
+    var loisirs=""
+    if(ch1.checked)loisirs += " Sport "
+    if(ch2.checked)loisirs += " Music "
+    if(ch3.checked)loisirs += " Travel "
+    document.getElementById('f4').innerHTML="you like :"+loisirs
+    document.getElementById('f4').style.visibility="visible"
+
+    }
+</script>
